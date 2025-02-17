@@ -1,6 +1,5 @@
 package jpabook.jpashop.domain;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -10,14 +9,10 @@ public class Item {
 
     @Id
     @GeneratedValue
-    @Column(name = "ITEM_ID")
     private Long id;
 
     private String name;
-
     private int price;
-
-    private int sockQuantity;
 
     public Long getId() {
         return id;
@@ -41,13 +36,5 @@ public class Item {
 
     public void setPrice(int price) {
         this.price = price;
-    }
-
-    public int getSockQuantity() {
-        return sockQuantity;
-    }
-
-    public void setSockQuantity(int sockQuantity) {
-        this.sockQuantity = sockQuantity;
     }
 }
