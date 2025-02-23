@@ -1,27 +1,14 @@
 package hellojpa;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
 public class Member {
 
     @Id
-    @GeneratedValue
-    @Column(name = "MEMBER_ID")
     private Long id;
-
-    @Column(name = "USERNAME")
-    private String username;
-
-    @Embedded
-    private Period period;
-
-    @Embedded
-    private Address homeAddress;
+    private String name;
 
     public Long getId() {
         return id;
@@ -31,27 +18,11 @@ public class Member {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public Period getPeriod() {
-        return period;
-    }
-
-    public void setPeriod(Period period) {
-        this.period = period;
-    }
-
-    public Address getHomeAddress() {
-        return homeAddress;
-    }
-
-    public void setHomeAddress(Address homeAddress) {
-        this.homeAddress = homeAddress;
+    public void setName(String name) {
+        this.name = name;
     }
 }
